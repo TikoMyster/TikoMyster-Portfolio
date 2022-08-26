@@ -3,17 +3,161 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>TikoMyster</title>
 
     <link rel="stylesheet" href="./assets/css/styles.css">
-
+    <script src="https://kit.fontawesome.com/fe02bb997a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="header">
+<section id="header">
+        <div class="container">
+            <nav>
+                <img src="./assets/Header-Twitter.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I'm <span>Christopher</span><br>Saechao  from Portland, OR.</h1>
+            </div>
+        </div>
 
+</section>
+<!--about--> 
+<article id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="./assets/About.png" alt="about">
+            </div>
+            <div class="about-col-2"></div>
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laboriosam praesentium maiores reprehenderit molestias nesciunt, labore dolorem nam, ducimus optio molestiae ex omnis impedit commodi obcaecati! Exercitationem ipsum enim ratione?</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web developer</span><br>Designing Web Interfaces</li>
+                        <li><span>Soft Developer</span><br>Software development</li>
+                        <li><span>App development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2017- Current</span><br>Call Center Representative for Kaiser</li>
+                        <li><span>2016-2017</span><br>Barista</li>
+                        <li><span>2015-2016</span><br>Cashier at Uwajimaya</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-2023</span><br>UW Coding Bootcamp</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</article>
+<!--services-->
+<div class="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum molestias voluptatem, minima quia consectetur. Doloremque illo facere modi aliquid iure, voluptatem cum possimus quae minima dicta ipsa culpa a.</p>
+                <a href="#">Learn More</a>
+
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Software Development</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum molestias voluptatem, minima quia consectetur. Doloremque illo facere modi aliquid iure, voluptatem cum possimus quae minima dicta ipsa culpa a.</p>
+                <a href="#">Learn More</a>
+                
+            </div>
+            <div>
+                <i class="fa-brands fa-linux"></i>
+                <h2>Linux</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum molestias voluptatem, minima quia consectetur. Doloremque illo facere modi aliquid iure, voluptatem cum possimus quae minima dicta ipsa culpa a.</p>
+                <a href="#">Learn More</a>
+                
+            </div>
+        </div>
+    </div>
 </div>
+<!--portfolio-->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="../TikoMyster-Portfolio/assets/work1.png" alt="First Work Horiseon Project">
+                <div class="layer">
+                    <h3>Social Media Project</h3>
+                    <p>First project focusing on refactoring code</p>
+                    <a href="#"><i class="fa-solid fa-code-compare"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>   
+</div>
+
+<!--Contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>tikomyster20@gmail.com</p>
+                <p>503-739-4674</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/channel/UCFsPEecFLW6kuYj086x6mNQ"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://twitter.com/TikoMyster"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.twitch.tv/tikomyster"><i class="fa-brands fa-twitch"></i></a>
+                    <a href="https://www.facebook.com/tiko.herrera/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/christopher-saechao-b446b914a"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit">Submit</button> </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
 </body>
 
 </html>
