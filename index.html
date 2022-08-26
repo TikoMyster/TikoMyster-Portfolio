@@ -16,11 +16,11 @@
             <nav>
                 <img src="./assets/Header-Twitter.png" class="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -39,7 +39,7 @@
             </div>
             <div class="about-col-2"></div>
                 <h1 class="sub-title">About Me</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laboriosam praesentium maiores reprehenderit molestias nesciunt, labore dolorem nam, ducimus optio molestiae ex omnis impedit commodi obcaecati! Exercitationem ipsum enim ratione?</p>
+                <p>Hello, thank you for stopping by. A little about me is I have 4 dogs: a German shepher, Siberian Husky, Shiba Inu, and Pelmbrook Welsh Corgi. I am happily married and we enjoy watching anime/ tv together. My hobby is streaming some FPS or RPG games whenever I am free.</p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -69,14 +69,14 @@
     </div>
 </article>
 <!--services-->
-<div class="services">
+<section class="services" id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
             <div>
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum molestias voluptatem, minima quia consectetur. Doloremque illo facere modi aliquid iure, voluptatem cum possimus quae minima dicta ipsa culpa a.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad labore ducimus necessitatibus dignissimos eos eligendi, ut atque repellat animi doloremque repellendus maiores? Quae minima veritatis deserunt autem cum laboriosam tempora!</p>
                 <a href="#">Learn More</a>
 
             </div>
@@ -96,9 +96,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!--portfolio-->
-<div id="portfolio">
+<section id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
@@ -113,16 +113,18 @@
         </div>
         <a href="#" class="btn">See More</a>
     </div>   
-</div>
+</section>
 
 <!--Contact-->
-<div id="contact">
+<footer id="contact">
+    <!--<img src="../TikoMyster-Portfolio/assets/katsu sad.PNG" alt="Shiba Inu Katsu is sad">
+    <h2>He'll be sad if you don't contact me.</h2>--will work on this later-->
     <div class="container">
         <div class="row">
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
-                <p>tikomyster20@gmail.com</p>
-                <p>503-739-4674</p>
+                <p><i class="fa-solid fa-at"></i> tikomyster20@gmail.com</p>
+                <p><i class="fa-solid fa-mobile"></i> 503-739-4674</p>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/channel/UCFsPEecFLW6kuYj086x6mNQ"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://twitter.com/TikoMyster"><i class="fa-brands fa-twitter"></i></a>
@@ -130,18 +132,20 @@
                     <a href="https://www.facebook.com/tiko.herrera/"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.linkedin.com/in/christopher-saechao-b446b914a"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
+                <a href="../TikoMyster-Portfolio/assets/CH Resume.pdf" download class="btn btn2">Download Resume</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                    <button type="submit">Submit</button> </button>
+                    <button type="submit" class="btn btn2">Submit</button> </button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
-</div>
+</footer>
 
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
@@ -157,6 +161,26 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxqzrgEL6o9o0UmxRDwgCE7BdeQBuL9nihdtT2PSPUBmZGbbT5dN6qZBT9q1sdmQs0q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = "hello"
+            },5000)
+            form.reset()
+        })
+
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 
 </body>
 
